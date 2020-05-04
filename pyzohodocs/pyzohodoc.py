@@ -87,6 +87,7 @@ class ZohoDocsClient(ZohoAuth):
         })
         self.url = URL_DEFAULTS.get("files")
         self._make_get_request(self.url, self.params)
+        return self.response
 
     def copy_file(self, doc_id, folder_id):
         """
@@ -100,6 +101,7 @@ class ZohoDocsClient(ZohoAuth):
         })
         self.url = URL_DEFAULTS.get("copy")
         self._make_post_request(self.url, self.params)
+        return self.response
 
     def move_file(self, doc_id, folder_id):
         """
@@ -113,6 +115,7 @@ class ZohoDocsClient(ZohoAuth):
         })
         self.url = URL_DEFAULTS.get("move")
         self._make_post_request(self.url, self.params)
+        return self.response
 
     def move_to_trash(self, doc_id):
         """
@@ -124,6 +127,7 @@ class ZohoDocsClient(ZohoAuth):
             "docid": doc_id
         })
         self._make_post_request(self.url, self.params)
+        return self.response
 
     def restore_from_trash(self, doc_id):
         """
@@ -135,6 +139,7 @@ class ZohoDocsClient(ZohoAuth):
             "docid": doc_id
         })
         self._make_post_request(self.url, self.params)
+        return self.response
 
     def delete_doc(self, doc_id):
         """
@@ -146,6 +151,7 @@ class ZohoDocsClient(ZohoAuth):
             "docid": doc_id
         })
         self._make_post_request(self.url, self.params)
+        return self.response
 
     def rename_doc(self, doc_id, doc_name):
         """
@@ -159,6 +165,7 @@ class ZohoDocsClient(ZohoAuth):
             "docname": doc_name
         })
         self._make_post_request(self.url, self.params)
+        return self.response
 
     def share_folder(self, folder_id, email_id, permission, notify, message="A folder has been shared"):
         """"
@@ -183,17 +190,123 @@ class ZohoDocsClient(ZohoAuth):
         })
         self.url = URL_DEFAULTS.get("share")
         self._make_post_request(self.url, self.params)
-        
-    def share_as_link(self, folderid, visibility, permission, **kwargs):
+        return self.response
+
+    def share_as_link(self, folder_id, visibility, permission, **kwargs):
         """
         Shares a folder as a link ,Returns the Shared link 
+
         """
         self.url = URL_DEFAULTS.get('link_share')
         self.params.update({
-            "folderid": folderid,
+            "folderid": folder_id,
             "visibility": visibility,
             "permission": permission
         })
         self.params.update(kwargs)
         self._make_post_request(self.url, self.params)
         return self.response['response'][2]['result'][0]['permaLink']
+
+    def update_visibility(self, folder_id, visibility, permission, **kwargs):
+        """
+        Changes the permission of the Folder shared
+
+        """
+        self.url = URL_DEFAULTS.get('update_link')
+        self.params.update(kwargs)
+        self.params.update({
+            "folderid": folder_id,
+            "visibility": visibility,
+            "permission": permission
+        })
+        self._make_post_request(self.url, self.params)
+        return self.response
+
+    def remove_permission(self, folder_id, email_id):
+        """
+        Removes  the permission of the Folder shared
+
+        """
+        self.url = URL_DEFAULTS.get('remove_link')
+        self.params.update({
+            "folderid": folder_id,
+            "emailids": email_id
+        })
+        self._make_post_request(self.url, self.params)
+        return self.response
+
+    def folder_details(self, folder_id):
+        """
+        Returns the Shared Details of  a Folder 
+        """
+        self.url = URL_DEFAULTS.get("remove_link")
+        self.params.update({
+            "folderid": folder_id
+        })
+        self._make_post_request(self.url, self.params)
+        return self.response
+
+    def get_user_tags(self):
+        """
+        Get the tags of the User
+        """
+        self.url = URL_DEFAULTS.get("user-tags")
+        self._make_get_request(self.url, self.default_params)
+        return self.response
+
+    def create_tag(self, tag_name):
+        """
+        Creates a New Tag
+        """
+        self.url = URL_DEFAULTS.get("create-tag")
+        self.params.update({
+            "tagname": tag_name
+        })
+        self._make_post_request(self.url, self.params)
+        return self.response
+
+    def add_file_to_tag(self, doc_id, tag_name):
+        """
+        Adds the Given File to Respective Tag 
+        :param : doc_id: The id of the document
+        :param :tagname: The name of the tag
+
+        """
+     
+        self.url = URL_DEFAULTS.get("add-tag")
+
+        self.params.update({
+            "tagname": tag_name,
+            "docid": doc_id
+        })
+        self._make_post_request(self.url, self.params)
+        return self.response
+
+    def remove_tag(self, doc_id, tag_name):
+        """
+        Removes the Tag from the file 
+        """
+        self.url = URL_DEFAULTS.get("remove-tag")
+
+        self.params.update({
+            "tagname": tag_name,
+            "docid": doc_id
+        })
+        self._make_post_request(self.url, self.params)
+        return self.response
+    def delete_tag(self,tag_id):
+        """
+        Deletes the given tag 
+        :param :tagid : The Id of the tag that is to be deleted
+
+        """    
+        self.url = URL_DEFAULTS.get("delete-tag")
+        self.params.update({
+            "tagid":tag_id
+        })
+        self._make_post_request(self.url,self.params)
+        return self.response
+    def     
+
+z = ZohoDocsClient("a18a835c2f9fe2d4a8915d375f17d7a8")
+

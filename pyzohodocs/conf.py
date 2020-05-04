@@ -11,6 +11,13 @@ URL_DEFAULTS = {
     "delete":"https://apidocs.zoho.com/files/v1/delete",
     "rename":"https://apidocs.zoho.com/files/v1/rename",
     "share":"https://apidocs.zoho.com/files/v1/share",
-    "link_share":"https://apidocs.zoho.com/files/v1/share/visibility"
+    "link_share":"https://apidocs.zoho.com/files/v1/share/visibility",
+    "update_link":"https://apidocs.zoho.com/files/v1/share/update",
+    "remove_link":"https://apidocs.zoho.com/files/v1/share/remove",
+    "user-tags":"https://apidocs.zoho.com/files/v1/tags",
+    "create-tag":"https://apidocs.zoho.com/files/v1/tags/create",
+    "add-tag":"https://apidocs.zoho.com/files/v1/tags/add",
+    "remove-tag":"https://apidocs.zoho.com/files/v1/tags/remove",
+    "delete-tag":"https://apidocs.zoho.com/files/v1/tags/delete"
 
 }

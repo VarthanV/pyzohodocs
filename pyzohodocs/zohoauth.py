@@ -16,21 +16,21 @@ class ZohoAuth(object):
 
     def _make_post_request(self, url, params, files=None):
         try:
-            
+
             self.response = requests.post(url, params, files=files).json()
-            
 
         except Exception as e:
             raise ZohoDocsException(
                 "An exception occured make sure you have passed the valid params", e)
-
+        finally :
+            return self.response
     def _make_get_request(self, url, params):
         try:
             self.response = requests.get(url, params).json()
 
         except Exception as e:
             raise ZohoDocsException("An exception occcured", e)
-
+    
     def get_auth_token(self, email, password, display_name):
         """
         :param email : The Email ID association with your Zoho Docs Account
@@ -47,4 +47,3 @@ class ZohoAuth(object):
         res = requests.post(url, params=params).text
         token = re.search('(?<=AUTHTOKEN=)(.*)', res)
         return token
-    
