@@ -160,13 +160,12 @@ class ZohoDocsClient(ZohoAuth):
         })
         self._make_post_request(self.url, self.params)
 
-    def share_folder(self, folder_id, email_ids, permission, notify, message="A folder has been shared"):
+    def share_folder(self, folder_id, email_id, permission, notify, message="A folder has been shared"):
         """"
         Shares the given Folder 
         :param: folder_id  The id of the folder.
-        :param : email_ids  The List of Email ID's that you wish 
+        :param : email_id  The List of Email ID's that you wish 
         to share the folder.
-        Eg : ['johndoe@zohomail.com']
 
         :param : permission possible values, readonly|readwrite | coowner 
         the permissions you wish to give to the folder. 
@@ -175,30 +174,26 @@ class ZohoDocsClient(ZohoAuth):
 
         """
         self.params.update({
-            
-            "folderids":folder_id,
-            "emailids":email_ids,
-            "permission":permission,
-            "notify":notify,
-            "message":message
-        })
-        self.url= URL_DEFAULTS.get("share")
-        self._make_post_request(self.url,self.params)
 
-        # Folder id eecb16c48fd4866f54394ac4c4aaf567b75a9
-        # file ID eecb15749f7f1e5cc46118a377c1c1d1e007a
-        # 833752dfe904d9860fcabd617fc5ac7f
-    def share_as_link(self,folderid,visibility,permission ,**kwargs):
+            "folderids": folder_id,
+            "emailids": email_id,
+            "permission": permission,
+            "notify": notify,
+            "message": message
+        })
+        self.url = URL_DEFAULTS.get("share")
+        self._make_post_request(self.url, self.params)
+        
+    def share_as_link(self, folderid, visibility, permission, **kwargs):
         """
         Shares a folder as a link ,Returns the Shared link 
         """
         self.url = URL_DEFAULTS.get('link_share')
         self.params.update({
-            "folderid":folderid,
-            "visibility":visibility,
-            "permission":permission
+            "folderid": folderid,
+            "visibility": visibility,
+            "permission": permission
         })
         self.params.update(kwargs)
-        self._make_post_request(self.url,self.params)
+        self._make_post_request(self.url, self.params)
         return self.response['response'][2]['result'][0]['permaLink']
-
