@@ -272,7 +272,7 @@ class ZohoDocsClient(ZohoAuth):
         :param :tagname: The name of the tag
 
         """
-     
+
         self.url = URL_DEFAULTS.get("add-tag")
 
         self.params.update({
@@ -294,18 +294,17 @@ class ZohoDocsClient(ZohoAuth):
         })
         self._make_post_request(self.url, self.params)
         return self.response
-    def delete_tag(self,tag_id):
+
+    def delete_tag(self, tag_id):
         """
         Deletes the given tag 
         :param :tagid : The Id of the tag that is to be deleted
 
-        """    
+        """
         self.url = URL_DEFAULTS.get("delete-tag")
         self.params.update({
-            "tagid":tag_id
+            "tagid": tag_id
         })
-        self._make_post_request(self.url,self.params)
+        self._make_post_request(self.url, self.params)
         return self.response
-      
-
 
