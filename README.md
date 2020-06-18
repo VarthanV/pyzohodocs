@@ -4,6 +4,10 @@ pyzohodocs is an unofficial client for the Zohodocs REST API.
 
 [https://www.zoho.com/docs/zoho-docs-api.html](http://https://www.zoho.com/docs/zoho-docs-api.html "https://www.zoho.com/docs/zoho-docs-api.html")
 
+
+[![pyzohodocs](https://pypip.in/download/pyzohodocs/badge.svg)](https://pypi.org/project/pyzohodocs/)
+ 
+
 It blends seamlessy with your web applications,scripts ,automation etc . Incase you are using Zoho Docs in your application, you can use this client.
 
 ## Obtaining an Authtoken
