@@ -32,7 +32,7 @@ class ZohoAuth(object):
         except Exception as e:
             raise ZohoDocsException("An exception occcured", e)
     @staticmethod
-    def get_auth_token(self, email, password, display_name):
+    def get_auth_token(email, password, display_name):
         """
         :param email : The Email ID association with your Zoho Docs Account
         :param password : The App Specific password of your account
