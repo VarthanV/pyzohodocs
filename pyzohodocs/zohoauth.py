@@ -13,6 +13,7 @@ class ZohoAuth(object):
             "authtoken": self.auth_token
         }
         self.response = {}
+        self.get_auth_token()
 
     def _make_post_request(self, url, params, files=None):
         try:
@@ -30,7 +31,7 @@ class ZohoAuth(object):
 
         except Exception as e:
             raise ZohoDocsException("An exception occcured", e)
-    
+    @staticmethod
     def get_auth_token(self, email, password, display_name):
         """
         :param email : The Email ID association with your Zoho Docs Account

@@ -10,17 +10,17 @@ It blends seamlessy with your web applications,scripts ,automation etc . Incase 
 
 ```python
 from pyzohodocs.auth import  ZohoAuth
-token = ZohoAuth(email = '<YOUR EMAIL ID>',
+token = ZohoAuth.get_auth_token(email = '<YOUR EMAIL ID>',
 password = '<YOUR APP SPECIFIC PASSWORD>',
 display_name = '<YOUR DISPLAYNAME>')
 ```
 
 ## Uploading a File
-
+```python
     from pyzohodocs.pyzohodoc import ZohoDocsClient
     client = ZohoDocsClient('<YOUR AUTH TOKEN>')
     client.upload_file(file_name.='example.docx',file_path = 'The path to your file')
-
+```
 You can pass extra arguments to this method as dict . See Documentation for the list of arguments you can pass
 
 ## Downloading a File
@@ -38,7 +38,7 @@ client.download_file(doc_id ='676554www',file_name = ' v.docx' )
 ```python
 from pyzohodocs.pyzohodoc import ZohoDocsClient
 client = ZohoDocsClient('<YOUR AUTH TOKEN>')
-client.create_file(file_name = ' test.docx', service='document',type='doc')
+client.create_file(filename = 'test.docx', service='document',type='doc')
 ```
 
 ## List your Files

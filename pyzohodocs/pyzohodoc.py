@@ -32,6 +32,7 @@ class ZohoDocsClient(ZohoAuth):
         self._params.update(kwargs)
 
         self._make_post_request(self.url, self._params, _files)
+        return self.response
 
     def _save_doc(self, link, file_name, params):
         try:
