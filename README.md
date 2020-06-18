@@ -10,6 +10,17 @@ pyzohodocs is an unofficial client for the Zohodocs REST API.
 
 It blends seamlessy with your web applications,scripts ,automation etc . Incase you are using Zoho Docs in your application, you can use this client.
 
+# Note 
+For user using version 1.1 use this method to obtain token
+```python
+from pyzohodocs.auth import  ZohoAuth
+
+auth_instance = ZohoAuth()
+token = auth_instance.get_auth_token(email = '<YOUR EMAIL ID>',
+password = '<YOUR APP SPECIFIC PASSWORD>',
+display_name = '<YOUR DISPLAYNAME>')
+```
+
 ## Obtaining an Authtoken
 
 ```python
@@ -56,7 +67,7 @@ client.my_files(category = "documents")
 There are methods for every operation that is available in the API . A documentation will be created soon.
 
 In case of Issues please create a new Ticket here .
-[https://github.com/VarthanV/pyzohodocs/issues](htthttps://github.com/VarthanV/pyzohodocs/issuesp:// "https://github.com/VarthanV/pyzohodocs/issues")
+[https://github.com/VarthanV/pyzohodocs/issues](https://github.com/VarthanV/pyzohodocs/issuesp:// "https://github.com/VarthanV/pyzohodocs/issues")
 
 For addition of new features
 [https://github.com/VarthanV/pyzohodocs/pulls](https://github.com/VarthanV/pyzohodocs/pullshttp:// "https://github.com/VarthanV/pyzohodocs/pulls")
