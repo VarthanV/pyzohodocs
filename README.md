@@ -56,7 +56,7 @@ client.my_files(category = "documents")
 There are methods for every operation that is available in the API . A documentation will be created soon.
 
 In case of Issues please create a new Ticket here .
-[https://github.com/VarthanV/pyzohodocs/issues](htthttps://github.com/VarthanV/pyzohodocs/issuesp:// "https://github.com/VarthanV/pyzohodocs/issues")
+[https://github.com/VarthanV/pyzohodocs/issues](https://github.com/VarthanV/pyzohodocs/issuesp:// "https://github.com/VarthanV/pyzohodocs/issues")
 
 For addition of new features
 [https://github.com/VarthanV/pyzohodocs/pulls](https://github.com/VarthanV/pyzohodocs/pullshttp:// "https://github.com/VarthanV/pyzohodocs/pulls")
