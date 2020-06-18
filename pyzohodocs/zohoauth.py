@@ -13,7 +13,7 @@ class ZohoAuth(object):
             "authtoken": self.auth_token
         }
         self.response = {}
-        self.get_auth_token()
+        
 
     def _make_post_request(self, url, params, files=None):
         try:

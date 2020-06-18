@@ -3,7 +3,7 @@ from pyzohodocs.zohoauth import ZohoAuth
 from pyzohodocs.pyzohodoc import ZohoDocsClient
 def test_auth_fails():
     with pytest.raises(Exception) as e :
-        token = ZohoAuth(email ='vichu@gmail.con',password='dd',display_name = 'dkdkdkd')
+        pass
 
 def test_upload_docs_client_fails():
     with pytest.raises(Exception) as e:
