@@ -31,6 +31,7 @@ class ZohoAuth(object):
 
         except Exception as e:
             raise ZohoDocsException("An exception occcured", e)
+        
     @staticmethod
     def get_auth_token(email, password, display_name):
         """
@@ -45,6 +46,10 @@ class ZohoAuth(object):
             "PASSWORD": password,
             "DISPLAY_NAME": display_name
         }
-        res = requests.post(url, params=params).text
-        token = re.search('(?<=AUTHTOKEN=)(.*)', res)
-        return token
+        try :
+            res = requests.post(url, params=params).text
+            
+            token = re.findall('(?<=AUTHTOKEN=)(.*)', res)
+        except Exception as e:
+            raise ZohoDocsException(res.text)
+        return token[0]
