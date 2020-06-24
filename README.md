@@ -4,6 +4,7 @@ pyzohodocs is an unofficial client for the Zohodocs REST API.
 
 [https://www.zoho.com/docs/zoho-docs-api.html](http://https://www.zoho.com/docs/zoho-docs-api.html "https://www.zoho.com/docs/zoho-docs-api.html")
 
+[![Build Status](https://travis-ci.com/VarthanV/pyzohodocs.svg?branch=master)](https://travis-ci.com/VarthanV/pyzohodocs)
 
 [![pyzohodocs](https://pypip.in/download/pyzohodocs/badge.svg)](https://pypi.org/project/pyzohodocs/)
  
