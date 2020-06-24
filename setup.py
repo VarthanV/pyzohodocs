@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='pyzohodocs',
-    version='1.5',
+    version='1.6',
     packages=setuptools.find_packages(),
     include_package_data=True,
     long_description_content_type= 'text/markdown',

@@ -16,8 +16,4 @@ def test_download_docs_fails_when_key_invalid():
         client = ZohoDocsClient('attjtj')
         client.download_file('dkdjd',file_name='v.docx')
 
-def test_obtanining_token():
-    token =ZohoAuth.get_auth_token(email='vishnulatha0068@gmail.com',password='dkdkd',display_name='fkf')
-    assert token != None
-    assert isinstance(token ,str)
-    
+
